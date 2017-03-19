@@ -1,0 +1,40 @@
+[
+  {
+    "id":"98hw85Y945e6U358678",
+    "url":"http://myApi.de/wishlists/98hw85Y945e6U358678",
+    "owner":"345MWyh7w4hY98W6678",
+    "title":"Floyd's Birthday Wishlist",
+    "description":"Bring on the presents:)",
+    "createdAt":"2012-07-12T12:42:23.777Z",
+    "items":
+    [
+      {
+        "productId":"5799cffdfb3ab6001d10adf6",
+        "productName":"testtest";
+        "amount":"1",
+        "price":"0.99",
+        "priceId":"5799d0018f7beb001d0dee2f",
+        "createdAt":"2012-07-12T13:23:31.415Z"
+      }
+    ]
+  },
+  {
+  "id":"98hw85Y945e6U358678",
+  "url":"http://myApi.de/wishlists/98hw85Y945e6U358678",
+  "owner":"345MWyh7w4hY98W6678",
+  "title":"Floyd's Birthday Wishlist",
+  "description":"Bring on the presents:)",
+  "createdAt":"2012-07-12T12:42:23.777Z",
+  "items":
+  [
+    {
+      "product":"5799cf7e042d5a001de812dd",
+      "productName":"testtest1";
+      "amount":"4",
+      "price":"1.99",
+      "priceId":"5799cf80ca4e04001dae5d70",
+      "createdAt":"2012-07-12T13:37:11.111Z"
+    }
+  ]
+}
+]

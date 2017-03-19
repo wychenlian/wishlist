@@ -1,0 +1,29 @@
+<!-- signin form -->
+<form name="createWishListForm" ng-submit="createWishList(createWishListForm)">
+    
+    <!-- title -->
+    <div class="form-group input-group" ng-class="{ 'has-error': createWishListForm.title.$invalid && createWishListForm.title.$dirty }">
+        <label class="input-group-addon control-label" for="title">{{'TITLE' | translate}}</label>
+        <input builder-input="text" type="text" class="form-control" id="title" name="title"
+               ng-model="wishlist.title" required ng-focus="clearErrors()">
+    </div>
+
+    <!-- password -->
+    <div class="form-group input-group" ng-class="{ 'has-error': createWishListForm.description.$invalid && createWishListForm.description.$dirty }">
+        <label class="input-group-addon control-label" for="description">{{'PASSWORD' | translate}}</label>
+        <input builder-input="text" type="text" class="form-control" id="description" name="description"
+               ng-model="wishlist.description" required ng-focus="clearErrors()">
+    </div>
+
+    <!-- error message -->
+    <ul ng-if="errors && errors.title.length" class="list-unstyled text-danger">
+        <li ng-repeat="error in title">{{error.message | translate}}</li>
+    </ul>
+
+    <!-- CREATE button -->
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="sign-in-button" ng-disabled="!cookiesEnabled">{{'CREATE_WISHLIST' | translate}}</button>
+
+    <!-- clear row -->
+    <div class="clr"><!-- --></div>
+
+</form>

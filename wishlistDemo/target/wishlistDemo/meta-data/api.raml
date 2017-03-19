@@ -1,0 +1,96 @@
+#%RAML 0.8
+title: hybris Service Archetype
+baseUri: http://localhost/
+version: v1
+mediaType:  application/json
+
+schemas:
+  - wishlistItem: !include schemas/wishlistItem.json
+  - wishlistItems: !include schemas/wishlistItems.json
+  - wishlist: !include schemas/wishlist.json
+  - caculation: !include schemas/caculation.json
+  - wishlists: !include schemas/wishlists.json
+  - error: !include https://api.yaas.io/patterns/v1/schema-error-message.json
+
+traits: 
+  - !include https://api.yaas.io/patterns/v2/trait-yaas-aware.yaml
+  - !include https://api.yaas.io/patterns/v2/trait-paged.yaml
+
+resourceTypes: 
+  - !include https://api.yaas.io/patterns/v2/resource-type-element.yaml
+  - !include https://api.yaas.io/patterns/v1/resource-type-collection.yaml
+
+/wishlists:
+  type: collection
+  is: [yaasAware]
+  post:
+    description: Creates a new wishlist
+    body:
+      application/json:
+        example: !include examples/wishlist-example.json
+
+  /{wishlistId}:
+    type: element
+    is: [yaasAware]
+    uriParameters:
+      wishlistId:
+        description: the id of the wishlist to work on
+        example: 784hti8ey
+        type: string
+    get:
+      description: Gets a wishlist
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include examples/wishlist-example.json
+
+    put:
+      description: Updates a wishlist
+      body:
+        application/json:
+          example: !include examples/wishlist-example.json
+      
+    /wishlistItems:
+      type: collection
+      is: [yaasAware]
+      get:
+        description: Gets all wishlist items
+        responses:
+          200:
+            body:
+              application/json:
+      post:
+        description: Adds a wishlist item
+        responses:
+          201:
+            body:
+              application/json:
+
+
+    /{attribute}/{index}/wishlistItem:
+          type: element
+          is: [yaasAware]
+          uriParameters:
+            attribute:
+              description: the id of the wishlist to work on
+              example: items
+              type: string
+            index:
+              description: the id of the wishlist to work on
+              example: 0
+              type: integer
+          put:
+             body:
+               application/json:
+                 example: !include examples/wishlistItem-example.json
+
+    /caculation:
+      type: element
+      is: [yaasAware]
+      get:
+        description: compute items price
+        responses:
+           200:
+             body:
+               application/json:

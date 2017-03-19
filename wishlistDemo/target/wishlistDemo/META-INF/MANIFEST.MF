@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: root
+Implementation-Vendor-Id: com.sample.wishlistDemo
+Build-Time: Thu Mar 16 2017 13:03:225 UTC +0000
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_91
+
